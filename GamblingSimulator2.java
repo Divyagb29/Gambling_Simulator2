@@ -1,7 +1,9 @@
 public class GamblingSimulator2
 {
-  public static void main(String ag[])
-  {
-	  System.out.println("Welcome to GamblingSimulator Game");
-  }
+	static int stake = 100;
+	static int bet = 1;
+	public static void main(String ag[])
+	{
+		  System.out.println("Welcome to GamblingSimulator Game");
+	}
 }

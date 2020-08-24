@@ -5,17 +5,17 @@ public class GamblingSimulator2
 	static int bet = 1;
 	static int stopDayLoss=50;
 	static int stopDayWin=150;
-	static int twentyDayloss = 0;
-	static int twentyDayWin = 0;
+	static int monthLoss = 0;
+	static int monthWin = 0;
 	static int day = 0;
 	public static int generateRandomNo()
 	{
 		Random random=new Random();
 		return random.nextInt(2);
 	}
-	public static void getTwentyDaysOfPlay()
+	public static void getMonthofDaysPlay()
 	{
-		while(day < 20)
+		while(day < 30)
 		{
 			stake = 100;
 			//per day report start
@@ -45,29 +45,27 @@ public class GamblingSimulator2
 			}
 		}
 
-		System.out.println();
-		System.out.println("20 days loss is $"+twentyDayloss);
-		System.out.println("20 days wins is $"+twentyDayWin);
-		
-		if(twentyDayloss > twentyDayWin)
+		System.out.println("month loss is $"+monthLoss);
+		System.out.println("month wins is $"+monthWin);
+		if(monthLoss > monthWin)//to calculate 30 days loss
 		{
-			//to calculate 20 days loss
-			twentyDayloss = twentyDayloss-twentyDayWin;
+			monthLoss = monthLoss-monthWin;
 			System.out.println();
-			System.out.println("overall loss in 20 days  is $"+twentyDayloss);
+			System.out.println("overall loss in a month  is $"+monthLoss);
 		}
-		else
-		{ 
-	        //to calculate 20 days win
-			twentyDayWin = twentyDayWin-twentyDayloss;
+
+		else {
+			//to calculate 30 days win
+			monthWin = monthWin-monthLoss;
 			System.out.println();
-			System.out.println("overall profit in a 20 days  is $"+twentyDayWin);
+			System.out.println("overall profit in a month  is $"+monthWin);
 		}
 		
 	}
 	public static void main(String ag[])
 	{
 		  System.out.println("Welcome to GamblingSimulator Game");
-		  getTwentyDaysOfPlay();
+		 // getTwentyDaysOfPlay();
+		  getMonthofDaysPlay()
 	}
 }
